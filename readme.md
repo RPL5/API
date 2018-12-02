@@ -53,6 +53,5 @@ GET - http://localhost:8000/api/makul?token=(TOKEN)
         "updated_at": null
     }
 ]
----
-## Security Vulnerabilities
+
 

@@ -43,7 +43,7 @@ return response()->json($makul);
 );
  
  
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->group(['prefix' => 'api', 'middleware' => 'jwt.auth'], function () use ($router) {
 $router->get('makul', 'MakulController@index');
 $router->get('makul/{id_makul}', 'MakulController@show');
 $router->post('makul', 'MakulController@store');
