@@ -67,9 +67,7 @@ class AuthController extends BaseController
         // Verify the password and generate the token
         if (Hash::check($this->request->input('password'), $user->password)) {
             return response()->json([
-                'data' => [
-                'user'=> $user   
-                ],
+                'user'=> $user,
                 'token' => $this->jwt($user)
             ], 200);
         }

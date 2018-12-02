@@ -13,13 +13,9 @@ class CreateMakulTable extends Migration
      */
     public function up()
     {
-        Schema::create('makuls', function (Blueprint $table) {
-            $table->increments('id_makul');
-            $table->string('nama_makul');
-            $table->integer('deksripsi');
-            $table->integer('sks');
+        Schema::create('makul', function (Blueprint $table) {
+            $table->increments('id');
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +26,6 @@ class CreateMakulTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('makuls');
+        Schema::dropIfExists('makul');
     }
 }

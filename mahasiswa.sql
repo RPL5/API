@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 01, 2018 at 09:50 PM
+-- Generation Time: Dec 02, 2018 at 07:50 PM
 -- Server version: 5.7.21-1
 -- PHP Version: 7.0.29-1+b1
 
@@ -23,6 +23,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `makul`
+--
+
+CREATE TABLE `makul` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `makuls`
+--
+
+CREATE TABLE `makuls` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nama_makul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deksripsi` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sks` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `makuls`
+--
+
+INSERT INTO `makuls` (`id`, `nama_makul`, `deksripsi`, `sks`, `created_at`, `updated_at`) VALUES
+(1, 'Pemograman Dasar', 'Adalah Sebuah Makul Pemograman Dasar', 3, NULL, NULL),
+(2, 'Logika Informatika', 'Adalah sebuah Makul Logika Informatika', 3, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -37,7 +72,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2018_11_28_150423_create_users_table', 1);
+(1, '2018_12_02_112357_create_users_table', 1),
+(2, '2018_12_02_112532_create_makul_table', 1),
+(3, '2018_11_28_150423_create_users_table', 2),
+(4, '2018_12_02_121305_create_makul_table', 3),
+(5, '2018_12_02_121651_create_makuls_table', 4);
 
 -- --------------------------------------------------------
 
@@ -46,8 +85,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `nim` varchar(9) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int(5) NOT NULL,
+  `nim` int(10) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -60,20 +99,32 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nim`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, '16650015', 'nurchulis', 'tod32@wolff.biz', '$2y$10$FDFn8V5LXr23Yz/3h5YhHup09qNAwYTm8QpqZN5pHOMoNG1NhLtye', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(2, '', 'Hiram Pagac', 'cristobal27@cormier.com', '$2y$10$hZ785s6KaEn8Yq0sRzXBb.UQRq5Z326aUH6e64npPPTcmAY6SDIX2', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(3, '', 'Vince Sanford', 'kasandra98@hayes.net', '$2y$10$8n3gbt9erYukGKfULyK8Uek017JoERzGnhfxOJnP34kxQx.IYJ0Ve', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(4, '', 'Mr. Kolby Kiehn I', 'ashlee.mohr@hodkiewicz.com', '$2y$10$r76j1RCLElhRXBlljaRY3ewqIhrz1WJ0QCcuykR1.AnA2DyDzUDlO', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(5, '', 'Jarvis Lueilwitz', 'newell53@gmail.com', '$2y$10$XfW66WAV/76kEM41i3XC8OzQZhRzaMuivHboB3tUGSvtZ9O3SlXDO', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(6, '', 'Domingo Nicolas DVM', 'zgrady@schuster.com', '$2y$10$QaUs38WDkO/jX2c0.nSsDu5/6lx9DGdSTfqC2moKBbM5h3JjiUk6G', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(7, '', 'Darron Barrows', 'winifred.mills@dickens.net', '$2y$10$n6XYxchy6WGlg8ckMh2Nwu9WxBbax.hm0BbivX3VpQpgCZBuGQqX6', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(8, '', 'Prof. Carmelo Eichmann', 'russel.gudrun@gmail.com', '$2y$10$TsqNp3OeWw./PUJtlXbkkuc890I742WPMKh.hGX4IwZGZxAd3EBIq', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(9, '', 'Jon Brown Jr.', 'anderson.dare@gmail.com', '$2y$10$AcPjr661GJoYmz5kFdz3zO7G3pwJe6MJ.xYvPiTVxjklZSJKtW3/K', '2018-11-30 01:10:35', '2018-11-30 01:10:35'),
-(10, '', 'Prof. Josianne Russel', 'sleffler@yahoo.com', '$2y$10$S5TKBUZPKc1KbwcM0JMUR.GiThvDQ742ek6SKoXiQBiASD/2Vn7na', '2018-11-30 01:10:35', '2018-11-30 01:10:35');
+(1, 16650015, 'Ahmad White', 'clara84@yahoo.com', '$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(2, 0, 'Mckayla Hills', 'dconnelly@gmail.com', '$2y$10$YyUg4lmvfx6caeqAv0CDzOBdBfRQ6/.04E8vKkHReFmNtR0Huhf7O', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(3, 0, 'Kenna Bergstrom', 'dickens.jennings@gmail.com', '$2y$10$r3MjS.uyULzEL7O4hvMWyOrLUNJzclSH7mFPfQULQDzCMofH02Woa', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(4, 0, 'Ms. Dakota Fritsch DDS', 'dominique.beier@reichel.biz', '$2y$10$2jRPLPTrIQ2J./OCzv0NDunvlfUpFKCMtfJeLJPq3RIL1cuh1GbKS', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(5, 0, 'Mr. Hollis Wolff Sr.', 'hmcdermott@walter.com', '$2y$10$xiiImwmdZk3jlKtkSogDHOJZJ2gdrhWn/OWxIRlVcRpb0DlmS8TMW', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(6, 0, 'Bettie Nitzsche', 'kailee.legros@kuhic.net', '$2y$10$CFVN3LYEsgWJ2jsXRPXXZ.c399zfNTNNFmwei.7PV9W.fVUFaJhBG', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(7, 0, 'Mauricio Gutkowski', 'monserrat53@dickens.biz', '$2y$10$FlbSc04Yx/ZH7AaqcokAXuVF1fMa/D6mnPmIyuoZ0w.t9X6UJbBje', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(8, 0, 'Kurt Bayer', 'rogers67@gmail.com', '$2y$10$nnnfiyNnDQBBZULW3QSfy.5QR8abKB1i1.A16f/frlpL6JlfWfd1a', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(9, 0, 'Anita Bradtke', 'rylan36@yahoo.com', '$2y$10$v0JmyROd43k91I77wvIrKOUQMquyQCefWrEPSnrQeZw6jFdnMfgbu', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(10, 0, 'Agustin Bogan', 'zboncak.lennie@yahoo.com', '$2y$10$8EZcnXWC7BheyDI0.E5NWuEEwjsQXUp3V9IODfbB/ElXVjxB5hajG', '2018-12-02 12:14:50', '2018-12-02 12:14:50');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `makul`
+--
+ALTER TABLE `makul`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `makuls`
+--
+ALTER TABLE `makuls`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -93,15 +144,25 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `makul`
+--
+ALTER TABLE `makul`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `makuls`
+--
+ALTER TABLE `makuls`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
