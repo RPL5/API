@@ -18,21 +18,19 @@ POST - http://localhost:8000/auth/login?nim=16650015&password=12345
 
 	RESULT
 	{
-    "data": {
-        "user": {
-            "id": 1,
-            "nim": "16650015",
-            "name": "nurchulis",
-            "email": "tod32@wolff.biz",
-            "created_at": "2018-11-30 01:10:35",
-            "updated_at": "2018-11-30 01:10:35"
-        }
+    "user": {
+        "id": 1,
+        "nim": 16650015,
+        "name": "Ahmad White",
+        "email": "clara84@yahoo.com",
+        "created_at": "2018-12-02 12:14:50",
+        "updated_at": "2018-12-02 12:14:50"
     },
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOiIxNjY1MDAxNSIsImlhdCI6MTU0MzY3NTQyMiwiZXhwIjoxNTQzNjc5MDIyfQ.3m9A3DYaHr8GoJkSIQ2pUPZavfVsK9BP54t5g7Vlaxk"
-}
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjE2NjUwMDE1LCJpYXQiOjE1NDQ0MjQ0MTcsImV4cCI6MTU0NDQyODAxN30.XZSkf05j-LRZDieSqzLx3hJyldlGisqo_Zelt9Mwhug"
+    }
 
 -- For Show Makul api/makul
-GET - http://localhost:8000/api/makul?token=(TOKEN)
+GET - http://localhost:8000/api/makul
 
     RESULT
     [
