@@ -5,13 +5,14 @@ use Illuminate\Database\Eloquent\Model;
  
 class Makul extends Model {
  
-protected $fillable = ['nama_makul','deskripsi','sks'];
+protected $fillable = ['nama_makul','deksripsi','sks'];
  
 protected $dates = [];
  
 public static $rules = [
+	
 'nama_makul' => 'required',
-'deskripsi' => 'required',
+'deksripsi' => 'required',
 'sks' => 'required',
 ];
  

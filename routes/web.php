@@ -43,9 +43,10 @@ return response()->json($makul);
 );
  
  
-$router->group(['prefix' => 'api', 'middleware' => 'jwt.auth'], function () use ($router) {
+$router->group(['prefix' => 'api'], function () use ($router) {
 $router->get('makul', 'MakulController@index');
 $router->get('makul/{id_makul}', 'MakulController@show');
+$router->get('krs/{id_nim}', 'MakulController@tampil_krs');
 $router->post('makul', 'MakulController@store');
 $router->put('makul/{id_makul}', 'MakulController@update');
 $router->delete('makul/{id_makul}', 'MakulController@delete');
