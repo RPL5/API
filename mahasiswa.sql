@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 02, 2018 at 07:50 PM
+-- Generation Time: Dec 10, 2018 at 03:50 PM
 -- Server version: 5.7.21-1
 -- PHP Version: 7.0.29-1+b1
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `mahasiswa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `krs`
+--
+
+CREATE TABLE `krs` (
+  `id_krs` int(5) NOT NULL,
+  `nim` varchar(12) NOT NULL,
+  `id_makul` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `krs`
+--
+
+INSERT INTO `krs` (`id_krs`, `nim`, `id_makul`) VALUES
+(1, '16650015', '2'),
+(2, '16650016', '1');
 
 -- --------------------------------------------------------
 
@@ -41,7 +61,7 @@ CREATE TABLE `makul` (
 CREATE TABLE `makuls` (
   `id` int(10) UNSIGNED NOT NULL,
   `nama_makul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deksripsi` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deksripsi` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sks` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -52,8 +72,11 @@ CREATE TABLE `makuls` (
 --
 
 INSERT INTO `makuls` (`id`, `nama_makul`, `deksripsi`, `sks`, `created_at`, `updated_at`) VALUES
-(1, 'Pemograman Dasar', 'Adalah Sebuah Makul Pemograman Dasar', 3, NULL, NULL),
-(2, 'Logika Informatika', 'Adalah sebuah Makul Logika Informatika', 3, NULL, NULL);
+(1, 'asas', 'Adalah Sebuah Makul Pemograman Dasar', 3, '2018-12-04 03:48:17', '2018-12-07 01:55:55'),
+(2, 'Logika Informatika', 'Adalah sebuah Makul Logika Informatika', 3, '2018-12-04 03:48:17', '2018-12-04 03:48:17'),
+(3, 'mencoba', 'Adalah sebuah Makul Logika Informatika', 2, '2018-12-04 03:48:17', '2018-12-04 03:48:17'),
+(4, 'mencoba', 'Mencoba ahsaoshoasoahoshaoshahsoahos', 2, '2018-12-04 03:49:35', '2018-12-04 03:49:35'),
+(5, 'Aljabar Linear', 'Mencoba ahsaoshoasoahoshaoshahsoahos', 2, '2018-12-04 09:08:34', '2018-12-04 09:08:34');
 
 -- --------------------------------------------------------
 
@@ -100,9 +123,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nim`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
 (1, 16650015, 'Ahmad White', 'clara84@yahoo.com', '$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
-(2, 0, 'Mckayla Hills', 'dconnelly@gmail.com', '$2y$10$YyUg4lmvfx6caeqAv0CDzOBdBfRQ6/.04E8vKkHReFmNtR0Huhf7O', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
-(3, 0, 'Kenna Bergstrom', 'dickens.jennings@gmail.com', '$2y$10$r3MjS.uyULzEL7O4hvMWyOrLUNJzclSH7mFPfQULQDzCMofH02Woa', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
-(4, 0, 'Ms. Dakota Fritsch DDS', 'dominique.beier@reichel.biz', '$2y$10$2jRPLPTrIQ2J./OCzv0NDunvlfUpFKCMtfJeLJPq3RIL1cuh1GbKS', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(2, 16650016, 'Mckayla Hills', 'dconnelly@gmail.com', '$2y$10$YyUg4lmvfx6caeqAv0CDzOBdBfRQ6/.04E8vKkHReFmNtR0Huhf7O', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(3, 16650017, 'Kenna Bergstrom', 'dickens.jennings@gmail.com', '$2y$10$r3MjS.uyULzEL7O4hvMWyOrLUNJzclSH7mFPfQULQDzCMofH02Woa', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
+(4, 16650018, 'Ms. Dakota Fritsch DDS', 'dominique.beier@reichel.biz', '$2y$10$2jRPLPTrIQ2J./OCzv0NDunvlfUpFKCMtfJeLJPq3RIL1cuh1GbKS', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
 (5, 0, 'Mr. Hollis Wolff Sr.', 'hmcdermott@walter.com', '$2y$10$xiiImwmdZk3jlKtkSogDHOJZJ2gdrhWn/OWxIRlVcRpb0DlmS8TMW', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
 (6, 0, 'Bettie Nitzsche', 'kailee.legros@kuhic.net', '$2y$10$CFVN3LYEsgWJ2jsXRPXXZ.c399zfNTNNFmwei.7PV9W.fVUFaJhBG', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
 (7, 0, 'Mauricio Gutkowski', 'monserrat53@dickens.biz', '$2y$10$FlbSc04Yx/ZH7AaqcokAXuVF1fMa/D6mnPmIyuoZ0w.t9X6UJbBje', '2018-12-02 12:14:50', '2018-12-02 12:14:50'),
@@ -113,6 +136,12 @@ INSERT INTO `users` (`id`, `nim`, `name`, `email`, `password`, `created_at`, `up
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `krs`
+--
+ALTER TABLE `krs`
+  ADD PRIMARY KEY (`id_krs`);
 
 --
 -- Indexes for table `makul`
@@ -144,6 +173,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `krs`
+--
+ALTER TABLE `krs`
+  MODIFY `id_krs` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `makul`
 --
 ALTER TABLE `makul`
@@ -152,7 +186,7 @@ ALTER TABLE `makul`
 -- AUTO_INCREMENT for table `makuls`
 --
 ALTER TABLE `makuls`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
