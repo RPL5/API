@@ -1,6 +1,6 @@
 # API Learning
 
-##Sudah Dapat dikases di Alamat Berikut : http://nurchulis.000webhostapp.com/api
+##Sudah Dapat dikases di Alamat Berikut : http://nurchulis.000webhostapp.com
 
 ## For using / Mengunakan
 
