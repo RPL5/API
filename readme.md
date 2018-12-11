@@ -55,34 +55,23 @@ GET - http://localhost:8000/api/krs/16650015
     GET - http://localhost:8000/api/sama/35 <----Id makulnya
     
     RESULT
-    [
+   [
     {
-        "id_krs": 3,
-        "nim": 16650015,
+        "nim": "16650017",
         "id_makul": "34",
-        "id_dosen": "4",
-        "id": 11,
-        "name": "nurchulis",
-        "email": "nura3609@gmail.com",
-        "password": "$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO",
-        "created_at": "2018-12-10 17:00:00",
-        "updated_at": "2018-12-10 17:00:00"
+        "name": "shofia nurul wilda"
     },
     {
-        "id_krs": 2,
-        "nim": 16650016,
+        "nim": "16650016",
         "id_makul": "34",
-        "id_dosen": "4",
-        "id": 12,
-        "name": "nadia sholiha",
-        "email": "nadia",
-        "password": "$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO",
-        "created_at": null,
-        "updated_at": null
+        "name": "nadia sholiha"
     },
     {
-    ........
-    ..............dan seterusnya
+        "nim": "16650015",
+        "id_makul": "34",
+        "name": "nurchulis"
+    }
+    ]
 
 
 ## For Login auth/login

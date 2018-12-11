@@ -29,8 +29,7 @@ return response()->json($krs);
 }
 public function ambil_sama($id_makul){
 //$krs= DB::select('select krs.id_makul, users.nim, krs.nim, users.name from users inner join krs on users.nim=krs.nim where krs.id_makul="'.$id_makul.'"');
-
-$krs= DB::select('select * from krs join users on users.nim=krs.nim where id_makul ="'.$id_makul.'" ');		
+$krs= DB::select('select users.nim, krs.nim, krs.id_makul, users.name from krs join users on users.nim=krs.nim where krs.id_makul ="'.$id_makul.'" order by krs.nim ASC');		
 return response()->json($krs);
 }
  
