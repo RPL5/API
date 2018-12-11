@@ -32,6 +32,13 @@ public function ambil_sama($id_makul){
 $krs= DB::select('select users.nim, krs.nim, krs.id_makul, users.name from krs join users on users.nim=krs.nim where krs.id_makul ="'.$id_makul.'" order by krs.nim ASC');		
 return response()->json($krs);
 }
+
+public function tampil_profile($id_nim){
+
+$makul= DB::select('select users.nim, users.name, detail_users.nim, detail_users.foto, detail_users.prodi from users  join detail_users on users.nim=detail_users.nim where users.nim ="'.$id_nim.'" ');		
+return response()->json($makul);
+
+}
  
 public function show($id_makul)
 {

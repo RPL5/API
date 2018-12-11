@@ -13,6 +13,21 @@
 ## Official Documentation
 //Silakan gunakan auth dan memperoleh token dengan api dibawah ini:
 
+## GET PROFILE MAHASISWA
+
+GET - http://localhost:8000/api/profile/16650015
+    RESULT
+
+    [
+    {
+        "nim": 16650015,
+        "name": "nurchulis",
+        "foto": "https:\/\/upload.wikimedia.org\/wikipedia\/commons\/3\/38\/Wikipedia_User-ICON_byNightsight.png",
+        "prodi": "Teknik Informatika"
+    }
+]
+
+
 ## GET MAKUL YANG DIAMBIL PER MAHASISWA
 
 GET - http://localhost:8000/api/krs/16650015

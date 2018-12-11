@@ -47,6 +47,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 $router->get('makul', 'MakulController@index');
 $router->get('makul/{id_makul}', 'MakulController@show');
 $router->get('krs/{id_nim}', 'MakulController@tampil_krs');
+$router->get('profile/{id_nim}', 'MakulController@tampil_profile');
 $router->post('makul', 'MakulController@store');
 $router->put('makul/{id_makul}', 'MakulController@update');
 $router->get('sama/{id_makul}','MakulController@ambil_sama');
