@@ -13,7 +13,79 @@
 ## Official Documentation
 //Silakan gunakan auth dan memperoleh token dengan api dibawah ini:
 
--- For Login auth/login
+## GET MAKUL YANG DIAMBIL PER MAHASISWA
+
+GET - http://localhost:8000/api/krs/16650015
+    RESULT
+
+    [
+    {
+        "id_krs": 3,
+        "nim": "16650015",
+        "id_makul": "34",
+        "id_dosen": 4,
+        "id": 34,
+        "nama_makul": "Komputer dan Masyarakat",
+        "deksripsi": "Komputer dan Masyarakat",
+        "sks": 2,
+        "created_at": null,
+        "updated_at": null,
+        "nama_dosen": "Aulia Faqih Rifa'i, M.Kom."
+    },
+    {
+        "id_krs": 4,
+        "nim": "16650015",
+        "id_makul": "35",
+        "id_dosen": 1,
+        "id": 35,
+        "nama_makul": "Manajemen Resiko",
+        "deksripsi": "Manajemen Resiko",
+        "sks": 2,
+        "created_at": null,
+        "updated_at": null,
+        "nama_dosen": "Agus Mulyanto Si, M"
+    },
+    .............
+    ...................
+    ........................
+    dan seterusnya
+
+##GET Daftar mahasiswa yang mengambil makul yang sama
+    
+    GET - http://localhost:8000/api/sama/35 <----Id makulnya
+    
+    RESULT
+    [
+    {
+        "id_krs": 3,
+        "nim": 16650015,
+        "id_makul": "34",
+        "id_dosen": "4",
+        "id": 11,
+        "name": "nurchulis",
+        "email": "nura3609@gmail.com",
+        "password": "$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO",
+        "created_at": "2018-12-10 17:00:00",
+        "updated_at": "2018-12-10 17:00:00"
+    },
+    {
+        "id_krs": 2,
+        "nim": 16650016,
+        "id_makul": "34",
+        "id_dosen": "4",
+        "id": 12,
+        "name": "nadia sholiha",
+        "email": "nadia",
+        "password": "$2y$10$xTex0QtuH9byhYXpVp15kOSEiOslmL5S05Q0V08.xyOkR2mZJtWZO",
+        "created_at": null,
+        "updated_at": null
+    },
+    {
+    ........
+    ..............dan seterusnya
+
+
+## For Login auth/login
 
 POST - http://localhost:8000/auth/login?nim=16650015&password=12345
 
@@ -30,7 +102,7 @@ POST - http://localhost:8000/auth/login?nim=16650015&password=12345
     "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsdW1lbi1qd3QiLCJzdWIiOjE2NjUwMDE1LCJpYXQiOjE1NDQ0MjQ0MTcsImV4cCI6MTU0NDQyODAxN30.XZSkf05j-LRZDieSqzLx3hJyldlGisqo_Zelt9Mwhug"
     }
 
--- For Show Makul api/makul
+## For Show Makul api/makul
 GET - http://localhost:8000/api/makul
 
     RESULT

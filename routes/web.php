@@ -49,6 +49,7 @@ $router->get('makul/{id_makul}', 'MakulController@show');
 $router->get('krs/{id_nim}', 'MakulController@tampil_krs');
 $router->post('makul', 'MakulController@store');
 $router->put('makul/{id_makul}', 'MakulController@update');
+$router->get('sama/{id_makul}','MakulController@ambil_sama');
 $router->delete('makul/{id_makul}', 'MakulController@delete');
  
 });
